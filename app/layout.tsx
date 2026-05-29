@@ -21,7 +21,7 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "about coffee co. | Katong Shopping Centre",
+  title: "About Coffee Co | Katong Shopping Centre",
   description:
     "Daily in-house bakes and fresh coffee. Brewing daily 9am–5pm at #01-29 Katong Shopping Centre, Singapore.",
 };
