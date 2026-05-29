@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const schedule = [
   { day: "Mon", items: ["Cheese & Herb Focaccia", "Banana Bread", "Almond Croissant"] },
   { day: "Tue", items: ["Sourdough Loaf", "Plain Croissants", "Lemon Tart"] },
@@ -24,59 +22,45 @@ export default function DailyBakes() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-start mb-10">
-          {/* Bake display photo */}
-          <div className="relative rounded-xl overflow-hidden h-64 border border-espresso/10">
-            <Image
-              src="/images/bakes-display.webp"
-              alt="About Coffee Co in-house bake display"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
-
-          {/* Calendar */}
-          <div className="grid grid-cols-7 gap-1.5 content-start">
-            {schedule.map((s, i) => {
-              const dayOfWeek = i === 6 ? 0 : i + 1;
-              const isToday = dayOfWeek === today;
-              return (
+        <div className="grid grid-cols-7 gap-2">
+          {schedule.map((s, i) => {
+            const dayOfWeek = i === 6 ? 0 : i + 1;
+            const isToday = dayOfWeek === today;
+            return (
+              <div
+                key={s.day}
+                className={`rounded-xl p-3 border transition-colors ${
+                  isToday
+                    ? "bg-caramel/20 border-caramel"
+                    : "bg-cream border-espresso/10"
+                }`}
+              >
                 <div
-                  key={s.day}
-                  className={`rounded-lg p-2 border transition-colors ${
-                    isToday
-                      ? "bg-caramel/20 border-caramel"
-                      : "bg-cream border-espresso/10"
+                  className={`font-handwritten text-lg text-center mb-2 ${
+                    isToday ? "text-caramel font-bold" : "text-roast"
                   }`}
                 >
-                  <div
-                    className={`font-handwritten text-base text-center mb-1.5 ${
-                      isToday ? "text-caramel font-bold" : "text-roast"
-                    }`}
-                  >
-                    {s.day}
-                    {isToday && (
-                      <span className="block text-xs font-normal leading-none">today</span>
-                    )}
-                  </div>
-                  <ul className="space-y-1">
-                    {s.items.map((item) => (
-                      <li
-                        key={item}
-                        className="font-handwritten text-xs text-espresso/80 leading-tight"
-                      >
-                        · {item}
-                      </li>
-                    ))}
-                  </ul>
+                  {s.day}
+                  {isToday && (
+                    <span className="block text-xs font-normal">today</span>
+                  )}
                 </div>
-              );
-            })}
-          </div>
+                <ul className="space-y-1.5">
+                  {s.items.map((item) => (
+                    <li
+                      key={item}
+                      className="font-handwritten text-xs text-espresso/80 leading-tight"
+                    >
+                      · {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
         </div>
 
-        <p className="text-center font-handwritten text-base text-latte">
+        <p className="text-center font-handwritten text-base text-latte mt-6">
           ✦ = Special weekly bake &nbsp;·&nbsp; Quantities limited &nbsp;·&nbsp; Pre-order recommended
         </p>
       </div>

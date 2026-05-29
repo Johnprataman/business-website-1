@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function FindUs() {
   return (
     <section id="find-us" className="py-20 px-5 bg-paper">
@@ -10,27 +8,17 @@ export default function FindUs() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 items-start">
-          <div className="space-y-4">
-            {/* Storefront photo */}
-            <div className="relative rounded-xl overflow-hidden h-64 border border-espresso/10">
-              <Image
-                src="/images/storefront.webp"
-                alt="About Coffee Co entrance at Katong Shopping Centre #01-29"
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-            {/* Signboard photo */}
-            <div className="relative rounded-xl overflow-hidden h-52 border border-espresso/10">
-              <Image
-                src="/images/signboard.webp"
-                alt="About Coffee Co outdoor signboard"
-                fill
-                className="object-cover object-center"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
+          <div className="rounded-xl overflow-hidden border border-espresso/10 h-80">
+            <iframe
+              src="https://maps.google.com/maps?q=865+Mountbatten+Rd+Katong+Shopping+Centre+Singapore+437844&output=embed&z=16"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="About Coffee Co location"
+            />
           </div>
 
           <div className="space-y-6">

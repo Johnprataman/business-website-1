@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 
 const coffeeItems = [
   { name: "Filter Coffee", price: "$3.50", desc: "House blend, black" },
@@ -46,21 +45,9 @@ export default function MenuSection() {
   return (
     <section id="menu" className="py-20 px-5 bg-cream">
       <div className="max-w-5xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-8 items-center mb-10">
-          <div>
-            <span className="font-handwritten text-caramel text-2xl">what we serve</span>
-            <h2 className="font-display text-4xl text-espresso mt-1">Our Menu</h2>
-            <p className="text-latte text-sm mt-2">Single-origin filter handbrew · Espresso drinks · In-house bakes</p>
-          </div>
-          <div className="relative rounded-xl overflow-hidden h-52 border border-espresso/10">
-            <Image
-              src="/images/cold-brew.webp"
-              alt="Cold brew coffee at About Coffee Co"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
+        <div className="text-center mb-8">
+          <span className="font-handwritten text-caramel text-2xl">what we serve</span>
+          <h2 className="font-display text-4xl text-espresso mt-1">Our Menu</h2>
         </div>
 
         <div className="flex justify-center gap-2 mb-10">
