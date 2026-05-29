@@ -17,7 +17,7 @@ export default function FindUs() {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="About Coffee Co. location"
+              title="about coffee co. location"
             />
           </div>
 

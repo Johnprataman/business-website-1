@@ -51,7 +51,7 @@ export default function Footer() {
 
         <div className="border-t border-cream/10 pt-8 flex flex-wrap justify-between items-center gap-4">
           <p className="text-cream/30 text-xs">
-            © {new Date().getFullYear()} About Coffee Co. All rights reserved.
+            © {new Date().getFullYear()} about coffee co. All rights reserved.
           </p>
           <div className="flex gap-5 text-xs text-cream/30">
             <a href="#home" className="hover:text-cream/60 transition-colors">Back to top ↑</a>
