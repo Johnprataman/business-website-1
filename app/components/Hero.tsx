@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
-    <section id="home" className="bg-cream pt-16 pb-24 px-5">
-      <div className="max-w-4xl mx-auto text-center">
+    <section id="home" className="bg-cream">
+      <div className="max-w-4xl mx-auto text-center pt-16 pb-12 px-5">
         <div className="inline-flex items-center gap-2 border border-caramel/50 rounded-full px-5 py-1.5 mb-10">
           <span className="font-handwritten text-caramel text-base">
             ☕ Brewing Daily · 9am–5pm · #01-29 Katong Shopping Centre
@@ -32,10 +34,44 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="mt-14 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-latte">
+        <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-latte">
           <span>📍 865 Mountbatten Rd, Singapore 437844</span>
           <span>🕐 Mon – Sun, 9am – 5pm</span>
-          <span>🛍️ Also on Shopee &amp; Lazada</span>
+          <span>💳 PayNow &amp; Cash only</span>
+        </div>
+      </div>
+
+      {/* Photo strip */}
+      <div className="grid grid-cols-3 gap-1 h-56 md:h-72 overflow-hidden">
+        <div className="relative col-span-1">
+          <Image
+            src="/images/storefront.webp"
+            alt="About Coffee Co storefront at Katong Shopping Centre"
+            fill
+            className="object-cover"
+            sizes="33vw"
+            priority
+          />
+        </div>
+        <div className="relative col-span-1">
+          <Image
+            src="/images/interior-1.webp"
+            alt="Inside About Coffee Co café"
+            fill
+            className="object-cover"
+            sizes="33vw"
+            priority
+          />
+        </div>
+        <div className="relative col-span-1">
+          <Image
+            src="/images/interior-2.webp"
+            alt="About Coffee Co café seating area"
+            fill
+            className="object-cover"
+            sizes="33vw"
+            priority
+          />
         </div>
       </div>
     </section>

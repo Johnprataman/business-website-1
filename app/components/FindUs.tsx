@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function FindUs() {
   return (
     <section id="find-us" className="py-20 px-5 bg-paper">
@@ -8,17 +10,27 @@ export default function FindUs() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 items-start">
-          <div className="rounded-xl overflow-hidden border border-espresso/10 h-80">
-            <iframe
-              src="https://maps.google.com/maps?q=865+Mountbatten+Rd+Katong+Shopping+Centre+Singapore+437844&output=embed&z=16"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="About Coffee Co location"
-            />
+          <div className="space-y-4">
+            {/* Storefront photo */}
+            <div className="relative rounded-xl overflow-hidden h-64 border border-espresso/10">
+              <Image
+                src="/images/storefront.webp"
+                alt="About Coffee Co entrance at Katong Shopping Centre #01-29"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+            {/* Signboard photo */}
+            <div className="relative rounded-xl overflow-hidden h-52 border border-espresso/10">
+              <Image
+                src="/images/signboard.webp"
+                alt="About Coffee Co outdoor signboard"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
           </div>
 
           <div className="space-y-6">
@@ -26,12 +38,18 @@ export default function FindUs() {
               <h3 className="font-handwritten text-xl text-caramel mb-2">📍 Address</h3>
               <p className="font-semibold text-espresso">#01-29 Katong Shopping Centre</p>
               <p className="text-roast text-sm">865 Mountbatten Rd, Singapore 437844</p>
+              <p className="text-latte text-xs mt-1">Look for the signage near the staircase to Level 1</p>
             </div>
 
             <div>
               <h3 className="font-handwritten text-xl text-caramel mb-2">🕐 Opening Hours</h3>
               <p className="text-espresso font-semibold">Monday – Sunday</p>
               <p className="text-roast text-sm">9:00am – 5:00pm (including public holidays)</p>
+            </div>
+
+            <div>
+              <h3 className="font-handwritten text-xl text-caramel mb-2">💳 Payment</h3>
+              <p className="text-roast text-sm">PayNow and Cash only</p>
             </div>
 
             <div>
@@ -48,9 +66,6 @@ export default function FindUs() {
               <h3 className="font-handwritten text-xl text-caramel mb-2">🅿️ Parking</h3>
               <p className="text-roast text-sm">
                 Basement carpark at Katong Shopping Centre — enter via Mountbatten Rd.
-              </p>
-              <p className="text-roast text-sm mt-1">
-                $1.20 / 30 min (weekdays) · $1.60 / 30 min (weekends)
               </p>
               <p className="text-latte text-xs mt-1">
                 Parkway Parade carpark also nearby (~5 min walk)
